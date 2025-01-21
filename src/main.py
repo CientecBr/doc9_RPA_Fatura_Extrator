@@ -22,7 +22,7 @@ def main():
     # Instala e configura o ChromeDriver
     servico = Service(ChromeDriverManager().install())
 
-    # Passe as opções ao criar o driver
+    # Passa as opções ao criar o driver
     driver = webdriver.Chrome(service=servico, options=options)
     driver.maximize_window()
 
@@ -31,6 +31,7 @@ def main():
         url = "https://rpachallengeocr.azurewebsites.net/"
         driver.get(url)
 
+        # Cria um objeto de espera explícita que aguarda até 15 segundos
         wait = WebDriverWait(driver, 15)
 
         # Garante que a tabela com ID "tableSandbox" está carregada
