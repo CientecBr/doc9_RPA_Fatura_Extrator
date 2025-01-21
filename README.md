@@ -28,7 +28,7 @@ Este repositório contém o código-fonte em **Python** que realiza a automaçã
 
 1. **Clonar o repositório**:
    ```bash
-   git clone https://github.com/seu-usuario/desafio-doc9.git
+   git clone https://github.com/CientecBr/doc9_RPA_Fatura_Extrator.git
    cd desafio-doc9
 
 2. **Instalar dependências:**
