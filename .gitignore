@@ -1,0 +1,10 @@
+# Ambiente virtual
+venv/
+__pycache__/
+*.pyc
+
+# Logs
+*.log
+
+# Pasta de faturas (se você não quiser versioná-la)
+faturas/
