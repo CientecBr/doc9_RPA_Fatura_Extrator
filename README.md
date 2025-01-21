@@ -1,17 +1,17 @@
 # RPA Extrator Faturas (DOC9)
 
-Este repositório contém o código-fonte em **Python** que realiza a automação para:
-- Ler todas as páginas de uma tabela no site [https://rpachallengeocr.azurewebsites.net/](https://rpachallengeocr.azurewebsites.net/).
-- Capturar apenas as faturas cuja data de vencimento já passou ou vence hoje.
+Este repositÃ³rio contÃ©m o cÃ³digo-fonte em **Python** que realiza a automaÃ§Ã£o para:
+- Ler todas as pÃ¡ginas de uma tabela no site [https://rpachallengeocr.azurewebsites.net/](https://rpachallengeocr.azurewebsites.net/).
+- Capturar apenas as faturas cuja data de vencimento jÃ¡ passou ou vence hoje.
 - Faz o download dos faturas.
-- Gerar um arquivo .CSV com: Número da Fatura, Data da Fatura e URL da Fatura.
+- Gerar um arquivo .CSV com: NÃºmero da Fatura, Data da Fatura e URL da Fatura.
 
-## Sumário
+## SumÃ¡rio
 1. [Tecnologias Utilizadas](#tecnologias-utilizadas)
-2. [Configuração e Instalação](#configuração-e-instalação)
-3. [Execução](#execução)
-4. [Decisões Técnicas](#decisões-técnicas)
-5. [Otimizações de Performance](#otimizações-de-performance)
+2. [ConfiguraÃ§Ã£o e InstalaÃ§Ã£o](#configuraÃ§Ã£o-e-instalaÃ§Ã£o)
+3. [ExecuÃ§Ã£o](#execuÃ§Ã£o)
+4. [DecisÃµes TÃ©cnicas](#decisÃµes-tÃ©cnicas)
+5. [OtimizaÃ§Ãµes de Performance](#otimizaÃ§Ãµes-de-performance)
 6. [Como Usar](#como-usar)
 
 ---
@@ -20,47 +20,47 @@ Este repositório contém o código-fonte em **Python** que realiza a automação par
 - **Python 3.9+**
 - [Selenium](https://pypi.org/project/selenium/)
 - [Requests](https://pypi.org/project/requests/)
-- [ChromeDriver](https://chromedriver.chromium.org/downloads) (compatível com sua versão do Google Chrome)
+- [ChromeDriver](https://chromedriver.chromium.org/downloads) (compatÃ­vel com sua versÃ£o do Google Chrome)
 
 ---
 
-## Configuração e Instalação
+## ConfiguraÃ§Ã£o e InstalaÃ§Ã£o
 
-1. **Clonar o repositório**:
+1. **Clonar o repositÃ³rio**:
    ```bash
    git clone https://github.com/seu-usuario/desafio-doc9.git
    cd desafio-doc9
 
-2. **Instalar dependências:**
+2. **Instalar dependÃªncias:**
    pip install -r requirements.txt
 
-## Execução
-**No diretório principal (onde está o main.py), execute:**
+## ExecuÃ§Ã£o
+**No diretÃ³rio principal (onde estÃ¡ o main.py), execute:**
   python src/main.py
   
-**"Caso esteja usando ambiente virtual, lembre-se de ativá-lo antes."**
+**"Caso esteja usando ambiente virtual, lembre-se de ativÃ¡-lo antes."**
 
-## Decisões Técnicas
-- Selenium para automação de navegação:
-- Usado por permitir clicar em botões "Next" e extrair dados de tabelas dinâmicas.
+## DecisÃµes TÃ©cnicas
+- Selenium para automaÃ§Ã£o de navegaÃ§Ã£o:
+- Usado por permitir clicar em botÃµes "Next" e extrair dados de tabelas dinÃ¢micas.
 - Requests para download dos arquivos:
 - Mais simples e eficiente que fazer download direto via Selenium.
 
 **Estrutura de pastas:**
-- src/ para isolar o código.
+- src/ para isolar o cÃ³digo.
 - faturas/ (gerada dinamicamente) para armazenar os PDFs/JPGs baixados e o CSV final.
 
-## Otimizações de Performance
-- utilização do webdriver_manager (já incluso nas dependências) para instalação automática do ChormeDriver.
-- Headless Chrome: o Chrome é iniciado sem interface gráfica, reduzindo uso de recursos.
-- Paginação: só carrega a próxima página quando a anterior já foi processada.
-- Download Sequencial: dado o volume esperado, não foi necessário paralelismo. Para grande escala (Futuro), será possível usar Threads ou Async IO.
+## OtimizaÃ§Ãµes de Performance
+- utilizaÃ§Ã£o do webdriver_manager (jÃ¡ incluso nas dependÃªncias) para instalaÃ§Ã£o automÃ¡tica do ChormeDriver.
+- Headless Chrome: o Chrome Ã© iniciado sem interface grÃ¡fica, reduzindo uso de recursos.
+- PaginaÃ§Ã£o: sÃ³ carrega a prÃ³xima pÃ¡gina quando a anterior jÃ¡ foi processada.
+- Download Sequencial: dado o volume esperado, nÃ£o foi necessÃ¡rio paralelismo. Para grande escala (Futuro), serÃ¡ possÃ­vel usar Threads ou Async IO.
 
 ## Como Usar
-**Após a execução, o script:**
-- Navega pelas páginas do site.
-- Coleta as faturas cujo vencimento = data atual.
+**ApÃ³s a execuÃ§Ã£o, o script:**
+- Navega pelas pÃ¡ginas do site.
+- Coleta as faturas cujo vencimento = data atual ou data passada.
 - Salva os arquivos na pasta faturas.
 - Gera o arquivo faturas.csv dentro da mesma pasta.
-- Verifique o conteúdo da pasta faturas. Você deverá encontrar: arquivos .pdf ou .jpg (conforme a extensão do link).
-- O arquivo faturas.csv com colunas: Número da Fatura, Data da Fatura e URL da Fatura.
+- Verifique o conteÃºdo da pasta faturas. VocÃª deverÃ¡ encontrar: arquivos .pdf ou .jpg (conforme a extensÃ£o do link).
+- O arquivo faturas.csv com colunas: NÃºmero da Fatura, Data da Fatura e URL da Fatura.
