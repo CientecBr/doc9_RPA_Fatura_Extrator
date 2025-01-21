@@ -41,10 +41,8 @@ Este repositório contém o código-fonte em **Python** que realiza a automaçã
 **"Caso esteja usando ambiente virtual, lembre-se de ativá-lo antes."**
 
 ## Decisões Técnicas
-- Selenium para automação de navegação:
-- Usado por permitir clicar em botões "Next" e extrair dados de tabelas dinâmicas.
-- Requests para download dos arquivos:
-- Mais simples e eficiente que fazer download direto via Selenium.
+- Selenium para automação de navegação: Usado por permitir clicar em botões "Next" e extrair dados de tabelas dinâmicas.
+- Requests para download dos arquivos: Mais simples e eficiente que fazer download direto via Selenium.
 
 **Estrutura de pastas:**
 - src/ para isolar o código.
