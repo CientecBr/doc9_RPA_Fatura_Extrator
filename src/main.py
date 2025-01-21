@@ -19,10 +19,6 @@ def main():
     # Adicione o modo headless
     options.add_argument("--headless")
 
-    # Outras opções que podem ajudar no modo headless:
-    # options.add_argument("--no-sandbox")
-    # options.add_argument("--disable-dev-shm-usage")
-
     # Instala e configura o ChromeDriver
     servico = Service(ChromeDriverManager().install())
 
